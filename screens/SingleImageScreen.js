@@ -10,6 +10,7 @@ import {
 } from 'react-native-track-player/lib/hooks';
 import Slider from '@react-native-community/slider';
 import styles from '../styles';
+import BackButton from '../components/BackButton';
 
 // https://github.com/rohanbhatia96/musicplayer-react-native/blob/master/App.js
 
@@ -46,7 +47,7 @@ const trackPlayerInit = async () => {
   return true;
 };
 
-const SingleImageScreen = () => {
+const SingleImageScreen = (props) => {
   const [isTrackPlayerInit, setIsTrackPlayerInit] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [sliderValue, setSliderValue] = useState(0);
@@ -99,6 +100,7 @@ const SingleImageScreen = () => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.imageContainer}>
+        <BackButton {...props}/>
         <Image
           source={{
             uri: songDetails.artwork,
