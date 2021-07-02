@@ -9,9 +9,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Colors from '../constants/Colors';
 
 const BackButton = props => {
+    console.log('--+++++---', props.onBackButtonClick());
     return (
         <TouchableOpacity
-            onPress={() => props.navigation.goBack()}
+            onPress={() =>
+                props.navigation.goBack()
+            }
             style = {styles.imageContainer}
         >
             <Icon

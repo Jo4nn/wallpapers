@@ -6,6 +6,7 @@ import {
     Image,
     TouchableOpacity,
     StyleSheet,
+    Dimensions,
 } from 'react-native';
 import {
     find,
@@ -214,7 +215,10 @@ const SingleImageScreen = (props) => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.imageContainer}>
-        <BackButton {...props}/>
+        <BackButton
+            onBackButtonClick={() => console.log('------fwefe')}
+            {...props}
+        />
         <Image
           source={prop('imageSrc')(songDetails)}
           resizeMode="contain"
@@ -253,6 +257,9 @@ const SingleImageScreen = (props) => {
   );
 };
 
+const {height, width} = Dimensions.get('window');
+const itemWidth = (width - 15);
+
 const styles = StyleSheet.create({
     icon: {
         paddingHorizontal: 30,
@@ -270,7 +277,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
       },
       detailsContainer: {
-        //flex: 0.05,
         justifyContent: 'center',
         alignItems: 'center',
       },
@@ -279,8 +285,8 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
       },
       animalImage: {
-        width: '90%',
-        height: '100%',
+        width: itemWidth,
+        height: itemWidth,
         alignSelf: 'center',
         borderRadius: 10,
       },
