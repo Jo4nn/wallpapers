@@ -137,7 +137,16 @@ const SingleImageScreen = (props) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [sliderValue, setSliderValue] = useState(0);
     const [isSeeking, setIsSeeking] = useState(false);
-    const {position, duration} = useTrackPlayerProgress(250);
+    const { position, duration } = useTrackPlayerProgress(250);
+
+    const resetPlayer = () => {
+        setIsTrackPlayerInit(false);
+        setIsPlaying(false);
+        setSliderValue(0);
+        setIsSeeking(false);
+        setSongDetails(null);
+        TrackPlayer.stop();
+    }
 
     useEffect(() => {
         const itemId = props.route.params.itemId;
@@ -216,7 +225,10 @@ const SingleImageScreen = (props) => {
     <View style={styles.mainContainer}>
       <View style={styles.imageContainer}>
         <BackButton
-            onBackButtonClick={() => console.log('------fwefe')}
+            onBackButtonClick={() => {
+                resetPlayer();
+                props.navigation.goBack();
+            }}
             {...props}
         />
         <Image
