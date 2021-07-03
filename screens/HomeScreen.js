@@ -148,25 +148,25 @@ const {height, width} = Dimensions.get('window');
 const itemWidth = (width - 15) / 2;
 
 const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-  },
-  item: {
-    backgroundColor: 'white',
-    padding: 20,
-    margin: 5,
-    borderRadius: 10,
-    width: itemWidth,
-    height: itemWidth,
-    flex: 0.5,
-  },
-  title: {
-    fontSize: 32,
-  },
-  row: {
-      flex: 1,
-      justifyContent: "space-around"
-  }
+    root: {
+        flex: 1,
+    },
+    item: {
+        backgroundColor: 'white',
+        padding: 20,
+        margin: 5,
+        borderRadius: 10,
+        width: itemWidth,
+        height: itemWidth,
+        flex: 0.5,
+    },
+    title: {
+        fontSize: 32,
+    },
+    row: {
+        flex: 1,
+        justifyContent: "space-around",
+    },
 });
 
 

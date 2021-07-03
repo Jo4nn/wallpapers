@@ -54,8 +54,6 @@ import roosterMp3Src from '../assets/sounds/rooster.mp3';
 import sheepMp3Src from '../assets/sounds/sheep.mp3';
 import turkeyMp3Src from '../assets/sounds/turkey.mp3';
 
-// https://github.com/rohanbhatia96/musicplayer-react-native/blob/master/App.js
-
 const songListDetails = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -301,6 +299,7 @@ const styles = StyleSheet.create({
         height: itemWidth,
         alignSelf: 'center',
         borderRadius: 10,
+        backgroundColor: 'white',
       },
       progressBar: {
         height: 10,
