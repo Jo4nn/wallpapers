@@ -26,7 +26,7 @@ const DrawerNavigator = () => {
   const dispatch = useDispatch();
     return (
       <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
-        <Drawer.Screen name="Home" component={TabNavigator} options={{headerMode: 'none', headerShown : false}} />
+        <Drawer.Screen name="Home" component={Home} options={{headerMode: 'none', headerShown : false}} />
         <Drawer.Screen name="Single Image" component={SingleImageScreen} options={{ headerShown: false }}/>
       </Drawer.Navigator>
     );

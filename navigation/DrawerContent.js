@@ -5,6 +5,7 @@ import {
     path,
     isNill,
 } from 'ramda';
+import Share from "react-native-share";
 import {
     useTheme,
     Avatar,
@@ -26,9 +27,17 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ProfileImage from '../components/ProfileImage';
 import Colors from '../constants/Colors';
 
-// https://github.com/itzpradip/react-navigation-v5-mix/blob/master/App.js
-// https://stackoverflow.com/questions/62275750/how-to-pass-custom-props-to-drawer-screens-in-react-navigation-5
-// https://callstack.github.io/react-native-paper/2.0/drawer-section.html
+const shareLink = () => {
+    const url = "https://danksloth.com/apps/memeswipe";
+
+    Share.open({
+        title: "Checkout Animal Sounds",
+        message: "Checkout Animal Sounds",
+        url: url,
+    }).catch((error) => {
+        console.warn("Failed to share: " + error);
+    });
+}
 const DrawerContent = props => {
     const paperTheme = useTheme();
     const dispatch = useDispatch();
@@ -39,20 +48,33 @@ const DrawerContent = props => {
                     <View style={styles.profileContainer}>
                         <ProfileImage {...props} />
                         <View style={{marginLeft:15, flexDirection:'column'}}>
-                            <Title style={styles.fullName}>QHD Wallpaper</Title>
+                            <Title style={styles.fullName}>Animal Sounds</Title>
                         </View>
                     </View>
                     <Drawer.Section style={styles.drawerSection}>
                         <DrawerItem
                             icon={({color, size}) => (
                                 <Icon
-                                name="home-outline"
+                                name="grid"
                                 color={color}
                                 size={size}
                                 />
                             )}
-                            label="Home"
+                            label="Sounds"
                             onPress={() => {props.navigation.navigate('Home')}}
+                        />
+                    </Drawer.Section>
+                    <Drawer.Section style={styles.drawerSection}>
+                        <DrawerItem
+                            icon={({color, size}) => (
+                                <Icon
+                                name="share"
+                                color={color}
+                                size={size}
+                                />
+                            )}
+                            label="Share link to app"
+                            onPress={() => shareLink()}
                         />
                     </Drawer.Section>
                 </View>
@@ -74,7 +96,7 @@ const DrawerContent = props => {
 const styles = StyleSheet.create({
     root: {
       flex: 1,
-      backgroundColor: Colors.grey5,
+      backgroundColor: 'white',
     },
     drawerContent: {
       flex: 1,
@@ -82,7 +104,7 @@ const styles = StyleSheet.create({
     profileContainer: {
       flexDirection:'column',
       alignItems: 'center',
-      backgroundColor: Colors.grey3,
+      backgroundColor: Colors.niebieski1,
       padding: 10,
     },
     fullName: {

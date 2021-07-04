@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
         paddingVertical: 10,
         borderRadius: 10,
-        backgroundColor: Colors.primaryTeal,
+        backgroundColor: Colors.niebieski1,
     },
       mainContainer: {
         flex: 1,

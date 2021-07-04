@@ -7,7 +7,6 @@ import {
 } from './StackNavigator';
 // import Colors from '../constants/Colors';
 
-
 const Tab = createMaterialTopTabNavigator();
 
 const TopTabNavigator = () => {

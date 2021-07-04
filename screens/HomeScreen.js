@@ -10,6 +10,9 @@ import {
     TouchableOpacity,
     Image,
 } from 'react-native';
+import Header from '../components/Header';
+
+import Colors from '../constants/Colors';
 import catSrc from '../assets/images/cat.jpg';
 import chickenSrc from '../assets/images/chicken.png';
 import dogSrc from '../assets/images/dog.png';
@@ -132,14 +135,14 @@ const HomeScreen = (props) => {
 
   return (
     <SafeAreaView style={styles.root}>
-      <FlatList
-        data={DATA}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-        numColumns={2}                   // set number of columns
-        columnWrapperStyle={styles.row}  // space them out evenly
-
-      />
+        <Header navigation={props.navigation} />
+        <FlatList
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={item => item.id}
+            numColumns={2}                   // set number of columns
+            columnWrapperStyle={styles.row}  // space them out evenly
+        />
     </SafeAreaView>
   );
 };
@@ -150,6 +153,7 @@ const itemWidth = (width - 15) / 2;
 const styles = StyleSheet.create({
     root: {
         flex: 1,
+        backgroundColor: Colors.niebieski1,
     },
     item: {
         backgroundColor: 'white',
