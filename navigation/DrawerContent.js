@@ -27,17 +27,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import ProfileImage from '../components/ProfileImage';
 import Colors from '../constants/Colors';
 
-const shareLink = () => {
-    const url = "https://danksloth.com/apps/memeswipe";
-
-    Share.open({
-        title: "Checkout Animal Sounds",
-        message: "Checkout Animal Sounds",
-        url: url,
-    }).catch((error) => {
-        console.warn("Failed to share: " + error);
-    });
-}
 const DrawerContent = props => {
     const paperTheme = useTheme();
     const dispatch = useDispatch();
@@ -64,31 +53,8 @@ const DrawerContent = props => {
                             onPress={() => {props.navigation.navigate('Home')}}
                         />
                     </Drawer.Section>
-                    <Drawer.Section style={styles.drawerSection}>
-                        <DrawerItem
-                            icon={({color, size}) => (
-                                <Icon
-                                name="share"
-                                color={color}
-                                size={size}
-                                />
-                            )}
-                            label="Share link to app"
-                            onPress={() => shareLink()}
-                        />
-                    </Drawer.Section>
                 </View>
             </DrawerContentScrollView>
-            <Drawer.Section style={styles.bottomDrawerSection}>
-                <TouchableRipple onPress={() => {toggleTheme()}}>
-                    <View style={styles.preference}>
-                        <Text>Dark Theme</Text>
-                        <View pointerEvents="none">
-                            <Switch value={paperTheme.dark}/>
-                        </View>
-                    </View>
-                </TouchableRipple>
-            </Drawer.Section>
         </View>
     );
 }

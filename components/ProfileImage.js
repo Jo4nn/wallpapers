@@ -13,6 +13,7 @@ import {
 } from 'react-redux';
 import { isNil } from 'ramda';
 
+import donkeySrc from '../assets/images/profile.png';
 import Colors from '../constants/Colors';
 
 const ProfileImage = props => {
@@ -21,9 +22,7 @@ const ProfileImage = props => {
             <View style = {styles.imagePreview}>
               <Image
                 style={styles.image}
-                source={{
-                  uri: 'https://reactnative.dev/img/tiny_logo.png',
-                }}
+                source={donkeySrc}
               />
             </View>
         </View>
@@ -37,13 +36,13 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: Colors.primaryTeal,
+        backgroundColor: Colors.niebieski1,
     },
     image: {
         width: '100%',
         height: '100%',
         borderRadius: 100,
-        backgroundColor: Colors.primaryTeal,
+        backgroundColor: Colors.niebieski1,
     },
 });
 
