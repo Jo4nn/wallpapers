@@ -131,7 +131,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.wallpaper"
+        applicationId "com.meiser.animalsounds"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

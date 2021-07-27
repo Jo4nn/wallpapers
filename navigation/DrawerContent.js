@@ -1,5 +1,9 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import {
+    View,
+    StyleSheet,
+    Linking,
+} from 'react-native';
 import { useSelector } from 'react-redux';
 import {
     path,
@@ -8,14 +12,9 @@ import {
 import Share from "react-native-share";
 import {
     useTheme,
-    Avatar,
     Title,
-    Caption,
-    Paragraph,
     Drawer,
     Text,
-    TouchableRipple,
-    Switch
 } from 'react-native-paper';
 import {
     DrawerContentScrollView,
@@ -26,6 +25,11 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import ProfileImage from '../components/ProfileImage';
 import Colors from '../constants/Colors';
+
+const openEula = () => {
+    const url = "https://www.privacypolicies.com/live/9c9d40a0-e806-46a4-a8f4-f9ec422dd07f";
+    Linking.openURL(url);
+}
 
 const DrawerContent = props => {
     const paperTheme = useTheme();
@@ -44,13 +48,26 @@ const DrawerContent = props => {
                         <DrawerItem
                             icon={({color, size}) => (
                                 <Icon
-                                name="grid"
-                                color={color}
-                                size={size}
+                                    name="grid"
+                                    color='white'
+                                    size={size}
+                                    style={styles.iconWrapper}
                                 />
                             )}
                             label="Sounds"
                             onPress={() => {props.navigation.navigate('Home')}}
+                        />
+                        <DrawerItem
+                            icon={({color, size}) => (
+                                <Icon
+                                    name="file"
+                                    color='white'
+                                    size={size}
+                                    style={styles.iconWrapper}
+                                />
+                            )}
+                            label="View EULA"
+                            onPress={() => openEula()}
                         />
                     </Drawer.Section>
                 </View>
@@ -70,7 +87,7 @@ const styles = StyleSheet.create({
     profileContainer: {
       flexDirection:'column',
       alignItems: 'center',
-      backgroundColor: Colors.niebieski1,
+      backgroundColor: Colors.niebieski3,
       padding: 10,
     },
     fullName: {
@@ -110,6 +127,11 @@ const styles = StyleSheet.create({
       paddingVertical: 12,
       paddingHorizontal: 16,
     },
+    iconWrapper: {
+        backgroundColor: Colors.niebieski3,
+        padding: 5,
+        borderRadius: 5,
+    }
   });
 
 export default DrawerContent;

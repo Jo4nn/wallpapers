@@ -102,7 +102,7 @@ const DATA = [
       sound: roosterMp3Src,
     },
     {
-      id: '586defeCfefrrfref-3da1-471f-bfefer96-14frefr71e29d72',
+      id: 'vv6defefrrfref-3da1-471f-bfefer96-14frefr71e29d72',
       imageSrc: sheepSrc,
       animal: 'Sheep',
       sound: sheepMp3Src,
@@ -153,7 +153,7 @@ const itemWidth = (width - 15) / 2;
 const styles = StyleSheet.create({
     root: {
         flex: 1,
-        backgroundColor: Colors.niebieski1,
+        backgroundColor: Colors.niebieski3,
     },
     item: {
         backgroundColor: 'white',

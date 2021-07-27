@@ -6,10 +6,13 @@ import {
   isNil,
 } from 'ramda';
 import DrawerNavigator from './DrawerNavigator';
+// import Advert from '../components/Advert';
 
 const AppNavigator = props => {
   const dispatch = useDispatch();
   const navRef = useRef();
+
+//      <Advert />
 
   return (
     <NavigationContainer>

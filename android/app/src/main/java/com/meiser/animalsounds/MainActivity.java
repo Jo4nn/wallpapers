@@ -1,4 +1,4 @@
-package com.wallpaper;
+package com.meiser.animalsounds;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "Wallpaper";
+    return "AnimalSounds";
   }
 }

@@ -21,11 +21,10 @@ import {
   Header,
   LearnMoreLinks,
   ReloadInstructions,
+  View,
 } from 'react-native/Libraries/NewAppScreen';
-
 import HomeScreen from './screens/HomeScreen';
 import SingleImageScreen from './screens/SingleImageScreen';
-
 import AppNavigator from './navigation/AppNavigator';
 
 const rootReducer = combineReducers({});

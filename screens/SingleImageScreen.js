@@ -116,7 +116,7 @@ const songListDetails = [
       url: roosterMp3Src,
     },
     {
-      id: '586defeCfefrrfref-3da1-471f-bfefer96-14frefr71e29d72',
+      id: 'vv6defefrrfref-3da1-471f-bfefer96-14frefr71e29d72',
       imageSrc: sheepSrc,
       title: 'Sheep',
       url: sheepMp3Src,
@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
         paddingVertical: 10,
         borderRadius: 10,
-        backgroundColor: Colors.niebieski1,
+        backgroundColor: Colors.niebieski3,
     },
       mainContainer: {
         flex: 1,

@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         left: 0,
         top: 0,
-        backgroundColor: Colors.niebieski1,
+        backgroundColor: Colors.niebieski3,
         borderBottomRightRadius: 10,
     },
     icon: {
