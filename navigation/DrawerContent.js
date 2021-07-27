@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     profileContainer: {
       flexDirection:'column',
       alignItems: 'center',
-      backgroundColor: Colors.niebieski3,
+      backgroundColor: Colors.secondary,
       padding: 10,
     },
     fullName: {
@@ -111,24 +111,11 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       marginRight: 15,
     },
-    paragraph: {
-      fontWeight: 'bold',
-      marginRight: 3,
-    },
     drawerSection: {
       marginTop: 15,
     },
-    bottomDrawerSection: {
-        borderTopColor: '#f4f4f4',
-    },
-    preference: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      paddingVertical: 12,
-      paddingHorizontal: 16,
-    },
     iconWrapper: {
-        backgroundColor: Colors.niebieski3,
+        backgroundColor: Colors.primary,
         padding: 5,
         borderRadius: 5,
     }

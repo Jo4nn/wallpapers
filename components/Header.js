@@ -23,7 +23,7 @@ function openDrawer(props)
 function Header(props)
 {
     return (
-        <View style={[styles.container, Colors.niebieski3]}>
+        <View style={[styles.container, Colors.primary]}>
             <TouchableOpacity onPress={() => openDrawer(props)}>
                 <Icon style={styles.icon} name={'navicon'} size={25} color="#fff"/>
             </TouchableOpacity>
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     {
         flexDirection: "row",
         alignItems: 'stretch',
-        backgroundColor: Colors.niebieski3,
+        backgroundColor: Colors.primary,
     },
     icon:
     {

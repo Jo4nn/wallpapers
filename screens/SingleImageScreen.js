@@ -7,6 +7,7 @@ import {
     TouchableOpacity,
     StyleSheet,
     Dimensions,
+    BackHandler,
 } from 'react-native';
 import {
     find,
@@ -28,7 +29,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Colors from '../constants/Colors';
 import BackButton from '../components/BackButton';
 
-import catSrc from '../assets/images/cat.jpg';
+import catSrc from '../assets/images/cat.png';
 import chickenSrc from '../assets/images/chicken.png';
 import dogSrc from '../assets/images/dog.png';
 import donkeySrc from '../assets/images/donkey.png';
@@ -146,6 +147,14 @@ const SingleImageScreen = (props) => {
         TrackPlayer.stop();
     }
 
+  useEffect(() => {
+       BackHandler.addEventListener('hardwareBackPress', resetPlayer);
+
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', resetPlayer);
+    };
+  });
+
     useEffect(() => {
         const itemId = props.route.params.itemId;
         setSongDetails(find(propEq('id', props.route.params.itemId))(songListDetails));
@@ -199,7 +208,7 @@ const SingleImageScreen = (props) => {
         }
     };
 
-  const onButtonPressed = () => {
+  const onPlayButtonPressed = () => {
     if (!isPlaying) {
       TrackPlayer.play();
       //setIsPlaying(true);
@@ -220,7 +229,7 @@ const SingleImageScreen = (props) => {
   };
 
   return (
-    <View style={styles.mainContainer}>
+    <View style={styles.root}>
       <View style={styles.imageContainer}>
         <BackButton
             onBackButtonClick={() => {
@@ -244,21 +253,21 @@ const SingleImageScreen = (props) => {
           minimumValue={0}
           maximumValue={1}
           value={sliderValue}
-          minimumTrackTintColor="#111000"
-          maximumTrackTintColor="#000000"
+          minimumTrackTintColor= 'white'
+          maximumTrackTintColor= 'white'
           onSlidingStart={slidingStarted}
           onSlidingComplete={slidingCompleted}
-          thumbTintColor="#000"
+          thumbTintColor='white'
         />
         <TouchableOpacity
-            onPress={onButtonPressed}
+            onPress={onPlayButtonPressed}
             style = {styles.imageContainer}
             disabled={!isTrackPlayerInit}
         >
             <Icon
                 color = 'white'
                 name = {isPlaying ? 'pause' : 'play'}
-                size = {25}
+                size = {40}
                 style = {styles.icon}
             />
         </TouchableOpacity>
@@ -271,16 +280,16 @@ const {height, width} = Dimensions.get('window');
 const itemWidth = (width - 15);
 
 const styles = StyleSheet.create({
+    root: {
+        flex: 1,
+        backgroundColor: Colors.secondary,
+    },
     icon: {
         paddingHorizontal: 30,
         paddingVertical: 10,
         borderRadius: 10,
-        backgroundColor: Colors.niebieski3,
+        backgroundColor: Colors.secondary,
     },
-      mainContainer: {
-        flex: 1,
-        backgroundColor: '#EDEDED',
-      },
       imageContainer: {
         flex: 1,
         justifyContent: 'center',
@@ -291,7 +300,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
       },
       controlsContainer: {
-        flex: 0.45,
+        flex: 0.35,
         justifyContent: 'flex-start',
       },
       animalImage: {
@@ -299,15 +308,13 @@ const styles = StyleSheet.create({
         height: itemWidth,
         alignSelf: 'center',
         borderRadius: 10,
-        backgroundColor: 'white',
       },
       progressBar: {
-        height: 10,
-        paddingBottom: 90,
+        paddingTop: 50,
       },
       songTitle: {
-        color: Colors.grey3,
-        fontSize: 20,
+        color: 'white',
+        fontSize: 40,
         fontWeight: 'bold',
         textTransform: 'capitalize',
       },

@@ -36,13 +36,13 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: Colors.niebieski3,
+        backgroundColor: Colors.primary,
     },
     image: {
         width: '100%',
         height: '100%',
         borderRadius: 100,
-        backgroundColor: Colors.niebieski3,
+        backgroundColor: Colors.primary,
     },
 });
 

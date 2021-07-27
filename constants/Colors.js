@@ -6,6 +6,7 @@ export default {
     zolty: '#F9F871',
 
     primary: '#797a7e', // dark grey
+    secondary: '#5584B8',
     lightGrey: '#F8F8F8',
     orange: '#fa7d09',
     veryDarkBlue: '#1a1a2e',
@@ -17,7 +18,7 @@ export default {
     ligthBlue: '#bbe1fa',
     niebieski1: '#0089BA',
     niebieski2: '#0081CF',
-    niebieski3: '#2C73D2',
+    niebieski3: '#5CD940',
     filetowy: '#845EC2',
     zielony1: '#008F7A',
     zielony2: '#00C9A7',
@@ -31,7 +32,7 @@ export default {
     grey4: '#717786',
     grey5: '#858b97',
     grey6: '#C0C0C0',
-    primaryTeal:'#00cfc0',
+    primary:'#30AD14',
     jasniejszyTeal: '#7ad6d7',
 
     accent: '#FFC107'

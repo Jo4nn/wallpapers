@@ -13,7 +13,7 @@ import {
 import Header from '../components/Header';
 
 import Colors from '../constants/Colors';
-import catSrc from '../assets/images/cat.jpg';
+import catSrc from '../assets/images/cat.png';
 import chickenSrc from '../assets/images/chicken.png';
 import dogSrc from '../assets/images/dog.png';
 import donkeySrc from '../assets/images/donkey.png';
@@ -153,7 +153,7 @@ const itemWidth = (width - 15) / 2;
 const styles = StyleSheet.create({
     root: {
         flex: 1,
-        backgroundColor: Colors.niebieski3,
+        backgroundColor: Colors.primary,
     },
     item: {
         backgroundColor: 'white',
